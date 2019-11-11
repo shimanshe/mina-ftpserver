@@ -67,6 +67,8 @@ public class IODataConnectionFactory implements ServerDataConnectionFactory {
 
     boolean secure = false;
 
+    boolean forceBinary = false;
+
     private boolean isZip = false;
 
     InetAddress serverControlAddress;
@@ -80,6 +82,10 @@ public class IODataConnectionFactory implements ServerDataConnectionFactory {
         if ((session != null) && (session.getListener() != null) && 
             session.getListener().getDataConnectionConfiguration().isImplicitSsl()) {
             secure = true;
+        }
+        if ((session != null) && (session.getListener() != null) &&
+                session.getListener().getDataConnectionConfiguration().isForceBinary()) {
+            forceBinary = true;
         }
     }
 
@@ -483,5 +489,9 @@ public class IODataConnectionFactory implements ServerDataConnectionFactory {
      */
     public void setServerControlAddress(final InetAddress serverControlAddress) {
         this.serverControlAddress = serverControlAddress;
+    }
+
+    public boolean isForceBinary() {
+        return forceBinary;
     }
 }

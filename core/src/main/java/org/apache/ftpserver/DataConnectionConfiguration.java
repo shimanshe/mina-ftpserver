@@ -126,4 +126,6 @@ public interface DataConnectionConfiguration {
      * @return True if SSL is mandatory for the data channel
      */
     boolean isImplicitSsl();
+
+    public boolean isForceBinary();
 }

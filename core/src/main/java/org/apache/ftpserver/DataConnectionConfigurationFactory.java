@@ -52,6 +52,7 @@ public class DataConnectionConfigurationFactory {
     private PassivePorts passivePorts = new PassivePorts(Collections.<Integer>emptySet(), true);
     private boolean passiveIpCheck = false;
     private boolean implicitSsl;
+    private boolean forceBinary = false;
 
     /**
      * Create a {@link DataConnectionConfiguration} instance based on the 
@@ -64,7 +65,7 @@ public class DataConnectionConfigurationFactory {
                 ssl, activeEnabled, activeIpCheck,
                 activeLocalAddress, activeLocalPort,
                 passiveAddress, passivePorts,
-                passiveExternalAddress, passiveIpCheck, implicitSsl);
+                passiveExternalAddress, passiveIpCheck, implicitSsl, forceBinary);
     }
     /*
      * (Non-Javadoc)
@@ -320,5 +321,13 @@ public class DataConnectionConfigurationFactory {
      */
     public void setImplicitSsl(boolean implicitSsl) {
         this.implicitSsl = implicitSsl;
+    }
+
+    public boolean isForceBinary() {
+        return forceBinary;
+    }
+
+    public void setForceBinary(boolean forceBinary) {
+        this.forceBinary = forceBinary;
     }
 }

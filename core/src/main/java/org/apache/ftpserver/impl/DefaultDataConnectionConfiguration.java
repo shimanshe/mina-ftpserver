@@ -48,6 +48,7 @@ public class DefaultDataConnectionConfiguration implements
     private final boolean passiveIpCheck;
     
     private final boolean implicitSsl;
+    private final boolean forceBinary;
 
     /**
 	 * Internal constructor, do not use directly. Use
@@ -57,7 +58,7 @@ public class DefaultDataConnectionConfiguration implements
 		SslConfiguration ssl, boolean activeEnabled, boolean activeIpCheck,
 		String activeLocalAddress, int activeLocalPort, String passiveAddress,
 		PassivePorts passivePorts, String passiveExternalAddress,
-		boolean passiveIpCheck, boolean implicitSsl) {
+		boolean passiveIpCheck, boolean implicitSsl, boolean forceBinary) {
 		this.idleTime = idleTime;
 		this.ssl = ssl;
 		this.activeEnabled = activeEnabled;
@@ -69,6 +70,7 @@ public class DefaultDataConnectionConfiguration implements
 		this.passiveExternalAddress = passiveExternalAddress;
 		this.passiveIpCheck = passiveIpCheck;
 		this.implicitSsl = implicitSsl;
+		this.forceBinary = forceBinary;
 	}
 
     /**
@@ -160,5 +162,9 @@ public class DefaultDataConnectionConfiguration implements
      */
     public boolean isImplicitSsl() {
         return implicitSsl;
+    }
+
+    public boolean isForceBinary() {
+        return forceBinary;
     }
 }

@@ -199,6 +199,9 @@ public class IODataConnection implements DataConnection {
         long transferredSize = 0L;
 
         boolean isAscii = session.getDataType() == DataType.ASCII;
+        if(factory.isForceBinary()){
+            isAscii = false;
+        }
         long startTime = System.currentTimeMillis();
         byte[] buff = new byte[4096];
 

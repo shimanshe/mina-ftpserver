@@ -88,4 +88,6 @@ public interface ServerDataConnectionFactory extends DataConnectionFactory {
      * Get port number.
      */
     int getPort();
+
+    boolean isForceBinary();
 }
