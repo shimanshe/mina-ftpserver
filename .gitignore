@@ -1,0 +1,26 @@
+Debug/
+Release/
+*.ncb
+*.sdf
+*.class
+__pycache__
+__pycache__/
+bin-debug/
+build/
+exe/
+exe debug/
+ipch/
+dist/
+**/target/**
+log.txt
+*.log
+**/sock-tunnel-java/service/**
+*/service/*.jar
+.idea/
+*.cap
+*.pcap
+*.pcapng
+*.iml
+*.db
+release/
+default.cfg
